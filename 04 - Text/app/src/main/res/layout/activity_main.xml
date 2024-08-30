@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    tools:context=".MainActivity" >
+
+    <TextView
+        android:id="@+id/textoTitulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Calculo IMC"
+        android:textSize="30sp"
+        android:textAlignment="center"
+        />
+
+    <TextView
+        android:id="@+id/espaco1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp" />
+
+    <TextView
+        android:id="@+id/textoOrientacao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Entre com as informações abaixo:"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayoutNome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textInputEditNome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nome"
+            android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayoutPeso"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textInputEditPeso"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Peso"
+            android:inputType="number|numberDecimal" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayoutAltura"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textInputEditAltura"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Altura"
+            android:inputType="number|numberDecimal" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/espaco2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp" />
+
+    <Button
+        android:id="@+id/btnCalcular"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Calcular"
+        android:onClick="calcular"/>
+
+    <Button
+        android:id="@+id/btnLimpar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="limpar"
+        android:onClick="limpar"/>
+
+    <TextView
+        android:id="@+id/espaco3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+         />
+
+    <TextView
+        android:id="@+id/textoTituloResultado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="Resultado"
+        android:textAlignment="center"
+         />
+
+    <TextView
+        android:id="@+id/textoResultado1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="30sp"
+        android:textAlignment="center"/>
+
+    <TextView
+        android:id="@+id/textoResultado2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="30sp"
+        android:textAlignment="center"/>
+</LinearLayout>
