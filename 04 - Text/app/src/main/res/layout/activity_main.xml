@@ -13,7 +13,7 @@
         android:id="@+id/textoTitulo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Calculo IMC"
+        android:text="Teste IMC"
         android:textSize="30sp"
         android:textAlignment="center"
         />
@@ -40,7 +40,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Nome"
-            android:inputType="text" />
+            android:inputType="text|textPersonName" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -52,7 +52,7 @@
             android:id="@+id/textInputEditPeso"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Peso"
+            android:hint="Peso (Ex: 70.5)"
             android:inputType="number|numberDecimal" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -65,7 +65,7 @@
             android:id="@+id/textInputEditAltura"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Altura"
+            android:hint="Altura (Ex: 1.75)"
             android:inputType="number|numberDecimal" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -80,7 +80,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Calcular"
-        android:onClick="calcular"/>
+        android:onClick="botao"
+
+        />
 
     <Button
         android:id="@+id/btnLimpar"
@@ -96,21 +98,33 @@
         android:padding="10dp"
          />
 
+
     <TextView
         android:id="@+id/textoTituloResultado"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textStyle="bold"
         android:text="Resultado"
+        android:textSize="20dp"
         android:textAlignment="center"
          />
+
+    <TextView
+        android:id="@+id/textoResultadoNome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:textSize="25sp"
+        android:layout_marginBottom="10dp"/>
 
     <TextView
         android:id="@+id/textoResultado1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textStyle="bold"
-        android:textSize="30sp"
+        android:textSize="40sp"
+        android:textColor="#8a00c8"
         android:textAlignment="center"/>
 
     <TextView
@@ -118,6 +132,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textStyle="bold"
-        android:textSize="30sp"
+        android:textSize="25sp"
+        android:layout_marginTop="10dp"
         android:textAlignment="center"/>
 </LinearLayout>
