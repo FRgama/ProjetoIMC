@@ -93,6 +93,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (imc < 16.9){
             resultado2.setText("Seu IMC é considerado como Muito Baixo do Peso");
+            erro(view);
         }
         else if(imc < 18.4){
             resultado2.setText("Seu IMC é considerado como Abaixo do Peso");
@@ -118,5 +119,12 @@ public class MainActivity extends AppCompatActivity {
         calcular(view);
         resultado(view);
     }
+    public void erro(View view){ // função será ativada quando a entrada estiver com algum problema
+        TextView resultado1 = findViewById(R.id.textoResultado1);
+        TextView resultado2 = findViewById(R.id.textoResultado2);
+        resultado1.setText("Erro");
+        resultado2.setText("Entrada inválida");
+    }
+
 
 }

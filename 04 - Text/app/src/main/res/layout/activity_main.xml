@@ -88,8 +88,8 @@
         android:id="@+id/btnLimpar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="limpar"
-        android:onClick="limpar"/>
+        android:onClick="limpar"
+        android:text="limpar" />
 
     <TextView
         android:id="@+id/espaco3"
