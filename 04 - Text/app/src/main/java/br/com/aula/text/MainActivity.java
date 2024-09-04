@@ -30,9 +30,11 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private Double imc; //Criada variavel imc para ser chamada tanto na função calcular quanto na resultadoo
+    private Double imc; //Criada variavel imc para ser chamada tanto na função calcular quanto na resultado
+    private Double peso;
+    private Double altura;
 
-    public void calcular(View view){
+    public void calcular(View view) {
         // intencionamento dos elementos view
         TextInputEditText campoNome = findViewById(R.id.textInputEditNome);
         TextInputEditText campoPeso = findViewById(R.id.textInputEditPeso);
@@ -45,30 +47,28 @@ public class MainActivity extends AppCompatActivity {
         // extrai dos objetos, recuperando a string que compoem
 
         String nome = campoNome.getText().toString();
-        String peso = campoPeso.getText().toString();
-        String altura = campoAltura.getText().toString();
+        String strPeso = campoPeso.getText().toString();
+        String strAltura = campoAltura.getText().toString();
 
+        try {
+            // Converter String para Numérico
+            Double peso = Double.parseDouble(strPeso);
+            Double altura = Double.parseDouble(strAltura);
 
-        // Apresentação do nome do Usuário
-        resultadoNome.setText(nome + ", Seu IMC é:");
+            imc = peso / (altura * altura); // Utilização da variável imc no cálculo
 
-        // converter String para Numerico
+            // Formatação para apresentação do resultado
+            DecimalFormat df = new DecimalFormat("#.##");
+            String stringImc = df.format(imc);
 
-        Double numPeso = Double.parseDouble(peso);
-        Double numAltura = Double.parseDouble(altura);
-        imc = numPeso/(numAltura*numAltura); //utilização da variavel imc no calculo
+            // Apresentando os resultados
+            resultadoNome.setText(nome + ", Seu IMC é:");
+            resultado1.setText(stringImc);
 
-        //Converter o resultado para string
-
-        String stringImc = String.valueOf(imc);
-
-        //Formatação para apresentação do resultado
-
-        DecimalFormat df = new DecimalFormat("#.##");
-        stringImc = df.format(imc);
-
-        //apresentando
-        resultado1.setText(stringImc);
+        } catch (NumberFormatException e) {
+            // Em caso de erro de formatação, chama a função de erro
+            erro(view);
+        }
     }
 
     public void limpar (View view){
@@ -91,27 +91,29 @@ public class MainActivity extends AppCompatActivity {
     public void resultado (View view){ //Sequencia de "ifs" para informar o resultado do teste de IMC
         TextView resultado2 = findViewById(R.id.textoResultado2);
 
-        if (imc < 16.9){
-            resultado2.setText("Seu IMC é considerado como Muito Baixo do Peso");
+        if (imc != null) { // caso seja nulo, chama a função erro
+            if (imc <= 10.0){
+                erro(view);
+            }
+            else if (imc < 16.9) {
+                resultado2.setText("Seu IMC é considerado como Muito Baixo do Peso");
+            } else if (imc < 18.4) {
+                resultado2.setText("Seu IMC é considerado como Abaixo do Peso");
+            } else if (imc < 24.9) {
+                resultado2.setText("Seu IMC é considerado como Peso Normal");
+            } else if (imc < 29.9) {
+                resultado2.setText("Seu IMC é considerado como Acima do Peso");
+            } else if (imc < 34.9) {
+                resultado2.setText("Seu IMC é considerado como Obesidade Grau 1");
+            } else if (imc < 40) {
+                resultado2.setText("Seu IMC é considerado como Obesidade Grau 2");
+            } else if (imc <= 80) {
+                resultado2.setText("Seu IMC é considerado como Obesidade Grau 3");
+            } else if (imc >= 80){
+                 erro(view);
+             }
+        } else {
             erro(view);
-        }
-        else if(imc < 18.4){
-            resultado2.setText("Seu IMC é considerado como Abaixo do Peso");
-        }
-        else if(imc < 24.9){
-            resultado2.setText("Seu IMC é considerado como Peso Normal");
-        }
-        else if(imc < 29.9){
-            resultado2.setText("Seu IMC é considerado como Acima do Peso");
-        }
-        else if(imc < 34.9){
-            resultado2.setText("Seu IMC é considerado como Obesidade Grau 1");
-        }
-        else if(imc < 40){
-            resultado2.setText("Seu IMC é considerado como Obesidade Grau 2");
-        }
-        else if(imc >= 40){
-            resultado2.setText("Seu IMC é considerado como Obesidade Grau 3");
         }
     }
 
