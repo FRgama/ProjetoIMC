@@ -11,7 +11,7 @@ Este projeto calcula o Índice de Massa Corporal (IMC) com base no peso e altura
 Existem duas formas principais de executar o projeto:
 
 ### 1. Executar via APK
-1. Faça o download do arquivo APK disponível na pasta `release/` deste repositório.
+1. Faça o download do arquivo APK disponível na pasta raiz deste repositório.
 2. Transfira o APK para um dispositivo Android.
 3. No dispositivo Android, vá até as "Configurações", habilite a instalação de aplicativos de fontes desconhecidas (caso ainda não esteja ativada).
 4. Instale o APK e abra o aplicativo.
