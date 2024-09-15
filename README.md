@@ -36,9 +36,9 @@ Certifique-se de que você tenha o **JDK** e o **Android SDK** configurados corr
   `ProjetoIMC/04 - Text/app/src/main/java/br/com/aula/text/MainActivity.java`
   
   No **MainActivity.java**, existem três funções principais:
-  - `calcularIMC()`: Faz o cálculo do IMC com base nas entradas do usuário (peso e altura).
-  - `limparCampos()`: Limpa os campos de entrada para permitir novos cálculos.
-  - `classificarIMC()`: Classifica o IMC de acordo com as faixas padrão (abaixo do peso, normal, sobrepeso, etc.).
+  - `calcular()`: Faz o cálculo do IMC com base nas entradas do usuário (peso e altura).
+  - `limpar()`: Limpa os campos de entrada para permitir novos cálculos.
+  - `resultado()`: Classifica o IMC de acordo com as faixas padrão (abaixo do peso, normal, sobrepeso, etc.).
 
 ## Contribuidores
 - Leonardo Ferreira — 23025389
