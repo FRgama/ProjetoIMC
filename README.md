@@ -41,6 +41,6 @@ Certifique-se de que você tenha o **JDK** e o **Android SDK** configurados corr
   - `resultado()`: Classifica o IMC de acordo com as faixas padrão (abaixo do peso, normal, sobrepeso, etc.).
 
 ## Contribuidores
-- Leonardo Ferreira — 23025389
-- Maria Kassandra — 23025405
+- Leonardo Ferreira da Silva — 23025389
+- Maria Kassandra Alves Gomes — 23025405
 - Rodrigo Gama — 23025472
